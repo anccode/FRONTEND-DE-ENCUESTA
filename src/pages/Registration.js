@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
+import axios from "axios";
 function Registration() {
   const initialValues = {
     username: "",
@@ -12,7 +12,12 @@ function Registration() {
     username: Yup.string().min(3).max(15).required(),
     password: Yup.string().min(4).max(20).required(),
   });
-  const onSubmit = () => {};
+  const onSubmit = (data) =>{
+    //console.log(data);
+    axios.post("http://localhost:3001/auth", data).then(()=>{
+      console.log(data)
+    });
+}
   
   
   return (
@@ -37,9 +42,10 @@ function Registration() {
             autoComplete="off"
             id="inputCreatePost"
             name="password"
+            type="password"
             placeholder="*********"
           />
-          <button type="onSubmit"> Create Post </button>
+          <button type="onSubmit"> Registrarte   </button>
         </Form>
       </Formik>
     </div>
