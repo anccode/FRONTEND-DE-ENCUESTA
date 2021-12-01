@@ -17,7 +17,7 @@ function Post() {
     axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
       setComments(response.data);
     });
-  }, []);
+  }, );
 
   const addComment = () => {
     axios
