@@ -18,6 +18,7 @@ function Home() {
     <div className="App">
       {listPost.map((value, key) => {
         return (
+          
           <div
           key={key}
             className="post"
@@ -25,6 +26,8 @@ function Home() {
               navigate(`/post/${value.id}`);
             }}
           >
+            
+
             <div className="title">{value.title}</div>
             <div className="body">{value.postText}</div>
             <div className="footer">{value.userName}</div>

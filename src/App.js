@@ -5,26 +5,75 @@ import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
-
+import { AuthContext } from "./helpers/AuthContext";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
+  const [authState, setAuthState] = useState({
+    username: "",
+    id: 0,
+    status: false,
+  });
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/auth/auth", {
+        headers: {
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      })
+      .then((response) => {
+        if (response.data.error) {
+          setAuthState({
+            ...authState,
+            status: false,
+          });
+        } else {
+          setAuthState({
+            username: response.data.username,
+            id: response.data.id,
+            status: true,
+          });
+        }
+      });
+  }, []);
+
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setAuthState({
+      username: "",
+    id: 0,
+    status: false,
+    });
+  };
+
   return (
     <div className="App">
-      <Router>
-        <div className="navbar">
-          <Link to="/">Home Page</Link>
-          <Link to="/createpost">Create A post</Link>
-          <Link to="/login">LOGIN</Link>
-          <Link to="/registration">signUP</Link>
-        </div>
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/createpost" exact element={<CreatePost />} />
-          <Route path="/post/:id" exact element={< Post/>} />
-          <Route path="/login" exact element={< Login/>} />
-          <Route path="/registration" exact element={< Registration/>} />
-        </Routes>
-      </Router>
+      <AuthContext.Provider value={{ authState, setAuthState }}>
+        <Router>
+          <div className="navbar">
+            <Link to="/">Home Page</Link>
+            <Link to="/createpost">Create A post</Link>
+            {!authState.status ? (
+              <>
+                <Link to="/login">LOGIN</Link>
+                <Link to="/registration">signUP</Link>
+              </>
+            ) : (
+              <button onClick={logout}>Logout</button>
+            )}
+            <h1>{authState.username}</h1>
+          </div>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/createpost" exact element={<CreatePost />} />
+            <Route path="/post/:id" exact element={<Post />} />
+            <Route path="/login" exact element={<Login />} />
+            <Route path="/registration" exact element={<Registration />} />
+          </Routes>
+        </Router>
+      </AuthContext.Provider>
     </div>
   );
 }
