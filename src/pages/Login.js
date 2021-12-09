@@ -24,13 +24,15 @@ function Login() {
     });
   };
   return (
-    <div>
+    <div class = "loginContainer"> 
+      <label> USUARIO </label>
       <input
         type="Text"
         onChange={(event) => {
           setUsername(event.target.value);
         }}
       />
+      <label> CONTRASEÑA </label>
       <input
         type="password"
         onChange={(event) => {

@@ -13,24 +13,33 @@ function Home() {
       //console.log(response.data);
     });
   }, []);
-
+  const likePost = (postId) => {
+    axios.post(
+      "http://localhost:3001/likes",
+      { PostId: postId },
+      { headers: { accessToken: localStorage.getItem("accessToken") } }
+    ).then((response)=> {
+      alert(response.data)
+    })
+  };
   return (
     <div className="App">
       {listPost.map((value, key) => {
         return (
-          
           <div
-          key={key}
+            key={key}
             className="post"
+          >
+            <div className="title">{value.title}</div>
+            <div className="body"
             onClick={() => {
               navigate(`/post/${value.id}`);
             }}
-          >
-            
-
-            <div className="title">{value.title}</div>
-            <div className="body">{value.postText}</div>
-            <div className="footer">{value.userName}</div>
+            >{value.postText}</div>
+            <div className="footer">
+              {value.userName}
+              <button onClick={() => likePost(value.id)}>Like</button>
+            </div>
           </div>
         );
       })}
