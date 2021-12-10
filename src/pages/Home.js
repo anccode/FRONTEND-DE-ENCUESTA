@@ -1,21 +1,31 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 //import API from "../Api";
 import { useNavigate } from "react-router-dom";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUp";
+import { AuthContext } from "../helpers/AuthContext";
 
 function Home() {
-  const [listOfPosts, setListOfPosts ] = useState([]);
-  const [likedPosts, setLikedPosts] = useState([]);
+  
   let navigate = useNavigate();
 
+  const [listOfPosts, setListOfPosts] = useState([]);
+  const {authState} = useContext(AuthContext);
+
   useEffect(() => {
-    axios.get("http://localhost:3001/posts",
-      { headers: { accessToken: localStorage.getItem("accessToken") } },
-      ).then((response) => {
+
+    if(!localStorage.getItem("accessToken")){
+      navigate("/login")
+    }else{
+    
+    axios
+      .get("http://localhost:3001/posts", {
+        headers: { accessToken: localStorage.getItem("accessToken") },
+      })
+      .then((response) => {
         setListOfPosts(response.data.listOfPosts);
-      //console.log(response.data);
-    });
+      });
+    }
   }, []);
   const likePost = (postId) => {
     axios
@@ -55,13 +65,18 @@ function Home() {
                 navigate(`/post/${value.id}`);
               }}
             >
-              {value.postText}
+              {value.posttext}
             </div>
             <div className="footer">
               <div className="username">{value.username}</div>
               <div className="buttons">
-              <ThumbUpAltIcon onClick={() => {likePost(value.id)}}/>
-              <label>{value.Likes.length}</label>
+                <ThumbUpAltIcon
+                  onClick={() => {
+                    likePost(value.id);
+                  }}
+                  
+                />
+                <label>{value.Likes.length}</label>
               </div>
             </div>
           </div>
