@@ -3,8 +3,7 @@ import React from 'react'
 function PageNotFount() {
     return (
         <div>
-            <h1>Page not fount: </h1>
-            
+            <h1>hola</h1>
         </div>
     )
 }

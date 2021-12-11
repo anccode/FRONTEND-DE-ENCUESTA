@@ -6,10 +6,14 @@ import Post from "./pages/Post";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import { AuthContext } from "./helpers/AuthContext";
-import  PageNotFount  from "./pages/PageNotFount";
+import PageNotFount from "./pages/PageNotFount";
+import Profile from "./pages/Profile";
+import ChangePassword from "./pages/ChangePassword";
+import Index from "./pages/Index";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -45,8 +49,8 @@ function App() {
     localStorage.removeItem("accessToken");
     setAuthState({
       username: "",
-    id: 0,
-    status: false,
+      id: 0,
+      status: false,
     });
   };
 
@@ -56,33 +60,33 @@ function App() {
         <Router>
           <div className="navbar">
             <div className="links">
-            
-          
-            
-            {!authState.status ?(
-              <>
-                <Link to="/login">LOGIN</Link>
-                <Link to="/registration">signUP</Link>
-              </>
-            ): (
-            <>
-            <Link to="/">Home Page</Link>
-            <Link to="/createpost">Create A post</Link> 
-            </>
-            )}
+              {!authState.status ? (
+                <>
+                  <Link to="/login">LOGIN</Link>
+                  <Link to="/registration">signUP</Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/">Home Page</Link>
+                  <Link to="/createpost">Create A post</Link>
+                </>
+              )}
             </div>
             <div className="loggedInContainer">
-            <h1>{authState.username}</h1>
-            { authState.status && <button onClick={logout}>Logout</button>}
+              <h1>{authState.username}</h1>
+              {authState.status && <button onClick={logout}>Logout</button>}
             </div>
           </div>
           <Routes>
+            <Route path="/home" exact element={<Index />} />
             <Route path="/" exact element={<Home />} />
             <Route path="/createpost" exact element={<CreatePost />} />
             <Route path="/post/:id" exact element={<Post />} />
             <Route path="/login" exact element={<Login />} />
             <Route path="/registration" exact element={<Registration />} />
-            <Route path="*" exact element={< PageNotFount />} />
+            <Route path="/profile/:id" exact element={<Profile />} />
+            <Route path="/ChangePassword" exact element={<ChangePassword />} />
+            <Route path="*" exact element={<PageNotFount />} />
           </Routes>
         </Router>
       </AuthContext.Provider>
