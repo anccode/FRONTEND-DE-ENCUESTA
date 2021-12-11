@@ -4,7 +4,11 @@ import rn from "../assets/rn.jpg";
 import "../estilos/index.css";
 import Button from '@mui/material/Button';
 
+
+
 function Index() {
+  
+
   return (
     <div>
       <div class="container">
@@ -30,7 +34,7 @@ function Index() {
               </div>
               
             </div>
-            <Button variant="outlined" >Comenzar ahora</Button>
+            <Button variant="outlined">Comenzar ahora</Button>
           </div>
           <div class="image">
             <img src={rn} />

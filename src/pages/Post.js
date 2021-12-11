@@ -4,6 +4,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 import { useNavigate } from "react-router-dom";
+import '../estilos/Post.css'
 
 function Post() {
   let { id } = useParams();
