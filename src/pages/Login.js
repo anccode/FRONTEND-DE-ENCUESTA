@@ -19,7 +19,7 @@ function Login() {
       } else {
         localStorage.setItem("accessToken", response.data.token);
         setAuthState({username : response.data.username, id : response.data.id, status : true})
-        navigate("/");
+        navigate("/home");
       }
     });
   };

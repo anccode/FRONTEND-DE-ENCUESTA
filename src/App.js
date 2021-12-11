@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Home from "./pages/Home";
+import PostHome from "./pages/PostHome";
 import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
 import Login from "./pages/Login";
@@ -10,6 +10,9 @@ import PageNotFount from "./pages/PageNotFount";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
 import Index from "./pages/Index";
+import Home from "./pages/Home";
+
+import "./estilos/navar.css"
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -51,7 +54,10 @@ function App() {
       username: "",
       id: 0,
       status: false,
-    });
+    }
+    
+    );
+    window.location.reload(true);
   };
 
   return (
@@ -62,24 +68,27 @@ function App() {
             <div className="links">
               {!authState.status ? (
                 <>
-                  <Link to="/login">LOGIN</Link>
-                  <Link to="/registration">signUP</Link>
+                  <Link to="/"> LOGO </Link>
+                  <Link to="/login">INICIAR SESSION</Link>
+                  <Link to="/registration">Crear Cuenta</Link>
                 </>
               ) : (
                 <>
-                  <Link to="/">Home Page</Link>
-                  <Link to="/createpost">Create A post</Link>
+                  <Link to="/home">  LOGO</Link>
+                  <Link to="/PostHome">BLOG</Link>
+                  <Link to="/createpost">CREAR BLOG</Link>
                 </>
               )}
             </div>
             <div className="loggedInContainer">
               <h1>{authState.username}</h1>
-              {authState.status && <button onClick={logout}>Logout</button>}
+              {authState.status && <button  onClick={logout} to ="/" >SALIR</button>}
             </div>
           </div>
           <Routes>
-            <Route path="/home" exact element={<Index />} />
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" exact element={<Index />} />
+            <Route path="/home" exact element={<Home />} />
+            <Route path="/PostHome" exact element={<PostHome />} />
             <Route path="/createpost" exact element={<CreatePost />} />
             <Route path="/post/:id" exact element={<Post />} />
             <Route path="/login" exact element={<Login />} />

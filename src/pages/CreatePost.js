@@ -5,7 +5,7 @@ import axios from 'axios'
 import API from '../Api'
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-
+import "../estilos/CreatePost.css"
 
 
 function CreatePost() {
@@ -33,7 +33,7 @@ function CreatePost() {
         //console.log(data);
         axios.post(API, data, {headers: { accessToken: localStorage.getItem("accessToken") },
       }).then((response)=>{
-          navigate('/')
+          navigate('/posthome')
         });
     }
     
