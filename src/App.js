@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
+import Form from "./pages/Form";
 
 import "./estilos/navar.css"
 
@@ -81,6 +82,7 @@ function App() {
               )}
             </div>
             <div className="loggedInContainer">
+              <Link to="/formulario"> Formulario </Link>
               <Link to={`profile/${authState.id}`} >{authState.username}</Link>
               {authState.status && <button  onClick={logout} to ="/" >SALIR</button>}
             </div>
@@ -94,6 +96,7 @@ function App() {
             <Route path="/login" exact element={<Login />} />
             <Route path="/registration" exact element={<Registration />} />
             <Route path="/profile/:id" exact element={<Profile />} />
+            <Route path="/formulario" exact element={<Form />} />
             <Route path="/ChangePassword" exact element={<ChangePassword />} />
             <Route path="*" exact element={<PageNotFount />} />
           </Routes>

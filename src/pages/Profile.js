@@ -27,6 +27,32 @@ function Profile() {
       setListOfPosts(response.data);
     });
   }, []);
+  const likePost = (postId) => {
+    axios
+      .post(
+        "http://localhost:3001/likes",
+        { PostId: postId },
+        { headers: { accessToken: localStorage.getItem("accessToken") } }
+      )
+      .then((response) => {
+        //alert(response.data);
+        setListOfPosts(
+          listOfPosts.map((post) => {
+            if (post.id === postId) {
+              if (response.data.liked) {
+                return { ...post, Likes: [...post.Likes, 0] };
+              } else {
+                const likesArray = post.Likes;
+                likesArray.pop();
+                return { ...post, Likes: likesArray };
+              }
+            } else {
+              return post;
+            }
+          })
+        );
+      });
+  };
 
   return (
     <div className="profilePageContainer">
@@ -62,6 +88,11 @@ function Profile() {
             </div>
             <div className="footer">
               <div className="username">{value.username}</div>
+              <ThumbUpAltIcon
+                  onClick={() => {
+                    likePost(value.id);
+                  }}                  
+                />
               <div className="buttons">
                 <label> {value.Likes.length}</label>
               </div>

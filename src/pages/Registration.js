@@ -45,6 +45,7 @@ function Registration() {
             name="username"
             placeholder="(Ex. Angel...)"
           />
+          <label>Correo:</label>
           <ErrorMessage name="correo" component="span" />
           <Field
             autoComplete="off"
@@ -52,18 +53,22 @@ function Registration() {
             name="correo"
             placeholder="(Ex. angel@upeu.edu.pe)"
           />
+          <label>Peso:</label>
           <ErrorMessage name="peso" component="span" />
           <Field
             autoComplete="off"
             id="inputCreatePost"
             name="peso"
+            type="number"
             placeholder="(50.5)"
           />
+          <label>Estatura:</label>
           <ErrorMessage name="estatura" component="span" />
           <Field
             autoComplete="off"
             id="inputCreatePost"
             name="estatura"
+            type="number"
             placeholder="(1.60)"
           />
           <label>Password:</label>
