@@ -4,7 +4,7 @@ import  NE from "../assets/NE.jpg";
 function PageNotFount() {
     return (
         <div>
-            <h1>Pagina </h1>
+            <h1>NO SIRBE ESTA WADAD RCTM </h1>
        
          
             
