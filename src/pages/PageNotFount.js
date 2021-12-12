@@ -1,10 +1,19 @@
 import React from 'react'
-import "../estilos/PageNotFount.css"
+
+import  NE from "../assets/NE.jpg";
+
 function PageNotFount() {
     return (
         <div>
-            <h1>aea</h1>
-        </div>
+            <h1>NO SIRBE ESTA WADAD RCTM </h1>
+       
+         
+            
+        
+         <div class="image">
+         <img src={NE} />
+       </div>
+       </div>
     )
 }
 
