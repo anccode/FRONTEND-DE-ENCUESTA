@@ -4,13 +4,17 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 import { useNavigate } from "react-router-dom";
-import '../estilos/Post.css'
+import "../estilos/Post.css";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUp";
+
+
+
 
 function Post() {
   let { id } = useParams();
 
   let navigate = useNavigate();
-
+  const [listOfPosts, setListOfPosts] = useState([]);
   const [postObject, setPostObject] = useState({});
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
@@ -113,6 +117,8 @@ function Post() {
     }
   };
 
+
+  
 
   return (
     <div className="postPage">

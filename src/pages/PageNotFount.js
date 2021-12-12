@@ -1,4 +1,5 @@
 import React from 'react'
+
 import  NE from "../assets/NE.jpg";
 
 function PageNotFount() {

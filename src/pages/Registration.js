@@ -8,11 +8,17 @@ function Registration() {
   const navigate = useNavigate()
   const initialValues = {
     username: "",
+    correo: "",
+    peso: "",
+    estatura: "",
     password: "",
   };
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
+    correo: Yup.string().min(3).max(25).required(),
+    peso: Yup.string().min(3).max(25).required(),
+    estatura: Yup.string().min(3).max(25).required(),
     password: Yup.string().min(4).max(20).required(),
   });
   const onSubmit = (data) =>{
@@ -38,6 +44,32 @@ function Registration() {
             id="inputCreatePost"
             name="username"
             placeholder="(Ex. Angel...)"
+          />
+          <label>Correo:</label>
+          <ErrorMessage name="correo" component="span" />
+          <Field
+            autoComplete="off"
+            id="inputCreatePost"
+            name="correo"
+            placeholder="(Ex. angel@upeu.edu.pe)"
+          />
+          <label>Peso:</label>
+          <ErrorMessage name="peso" component="span" />
+          <Field
+            autoComplete="off"
+            id="inputCreatePost"
+            name="peso"
+            type="number"
+            placeholder="(50.5)"
+          />
+          <label>Estatura:</label>
+          <ErrorMessage name="estatura" component="span" />
+          <Field
+            autoComplete="off"
+            id="inputCreatePost"
+            name="estatura"
+            type="number"
+            placeholder="(1.60)"
           />
           <label>Password:</label>
           <ErrorMessage name="password" component="span" />
