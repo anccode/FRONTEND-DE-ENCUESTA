@@ -9,12 +9,18 @@ function Profile() {
   let { id } = useParams();
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [peso, setPeso] = useState("");
+  const [estatura, setEstatura] = useState("");
   const [listOfPosts, setListOfPosts] = useState([]);
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
     axios.get(`http://localhost:3001/auth/basicinfo/${id}`).then((response) => {
       setUsername(response.data.username);
+      setCorreo(response.data.correo);
+      setPeso(response.data.peso);
+      setEstatura(response.data.estatura);
     });
 
     axios.get(`http://localhost:3001/posts/byuserId/${id}`).then((response) => {
@@ -27,6 +33,9 @@ function Profile() {
     <div className="basicInfo">
       {" "}
       <h1> Username: {username} </h1>
+      <h1> Correo: {correo} </h1>
+      <h1> Peso: {peso} </h1>
+      <h1> Talla: {estatura} </h1>
       {authState.username === username && (
         <button
           onClick={() => {

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../estilos/PageNotFount.css"
 function PageNotFount() {
     return (
         <div>
