@@ -12,6 +12,7 @@ import ChangePassword from "./pages/ChangePassword";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Form from "./pages/Form";
+import Info from "./pages/Info";
 
 import "./estilos/navar.css"
 
@@ -89,6 +90,7 @@ function App() {
           </div>
           <Routes>
             <Route path="/" exact element={<Index />} />
+            <Route path="/info" exact element={<Info />} />
             <Route path="/home" exact element={<Home />} />
             <Route path="/PostHome" exact element={<PostHome />} />
             <Route path="/createpost" exact element={<CreatePost />} />
