@@ -11,14 +11,12 @@ import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
-import Form from "./pages/Form";
-import Info from "./pages/Info";
-
-import "./estilos/navar.css"
-
+import Cuestionario from "./pages/Cuestionario";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./estilos/navar.css";
 
+let date = "Cuestionario";
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -56,9 +54,8 @@ function App() {
       username: "",
       id: 0,
       status: false,
-    }
+    });
     
-    );
     window.location.reload(true);
   };
 
@@ -76,21 +73,26 @@ function App() {
                 </>
               ) : (
                 <>
-                  <Link to="/home">  LOGO</Link>
+                  <Link to="/home"> LOGO</Link>
                   <Link to="/PostHome">BLOG</Link>
                   <Link to="/createpost">CREAR BLOG</Link>
                 </>
               )}
             </div>
             <div className="loggedInContainer">
-              
-              <Link to={`profile/${authState.id}`} >{authState.correo}</Link>
-              {authState.status && <button  onClick={logout} to ="/" >SALIR</button>}
+              {authState.status && (
+                <Link to={`profile/${authState.id}`}>Perfil</Link>
+              )}
+              {authState.status && <Link to="/cuestionario">{date}</Link>}
+              {authState.status && (
+                <button onClick={logout} to="/">
+                  SALIR
+                </button>
+              )}
             </div>
           </div>
           <Routes>
             <Route path="/" exact element={<Index />} />
-            <Route path="/info" exact element={<Info />} />
             <Route path="/home" exact element={<Home />} />
             <Route path="/PostHome" exact element={<PostHome />} />
             <Route path="/createpost" exact element={<CreatePost />} />
@@ -98,7 +100,7 @@ function App() {
             <Route path="/login" exact element={<Login />} />
             <Route path="/registration" exact element={<Registration />} />
             <Route path="/profile/:id" exact element={<Profile />} />
-            <Route path="/formulario" exact element={<Form />} />
+            <Route path="/cuestionario" exact element={<Cuestionario />} />
             <Route path="/ChangePassword" exact element={<ChangePassword />} />
             <Route path="*" exact element={<PageNotFount />} />
           </Routes>
