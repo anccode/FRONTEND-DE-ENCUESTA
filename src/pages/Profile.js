@@ -62,7 +62,7 @@ function Profile() {
       <h1> Correo: {correo} </h1>
       <h1> Peso: {peso} </h1>
       <h1> Talla: {estatura} </h1>
-      {authState.username === username && (
+      {authState.correo === correo && (
         <button
           onClick={() => {
             navigate("/changepassword");

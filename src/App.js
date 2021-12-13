@@ -83,7 +83,7 @@ function App() {
             </div>
             <div className="loggedInContainer">
               
-              <Link to={`profile/${authState.id}`} >Perfil</Link>
+              <Link to={`profile/${authState.id}`} >{authState.correo}</Link>
               {authState.status && <button  onClick={logout} to ="/" >SALIR</button>}
             </div>
           </div>
