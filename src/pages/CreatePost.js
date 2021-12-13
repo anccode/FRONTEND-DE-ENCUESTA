@@ -59,7 +59,6 @@ function CreatePost() {
             name="posttext"
             placeholder="(Ex. Post...)"
           />
-
           <button type="onSubmit"> Create Post </button>
         </Form>
       </Formik>

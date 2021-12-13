@@ -127,7 +127,7 @@ function Post() {
           <div
             className="title"
             onClick={() => {
-              if (authState.username === postObject.username) {
+              if (authState.correo === postObject.correo) {
                 editPost("title");
               }
             }}
@@ -137,7 +137,7 @@ function Post() {
           <div
             className="body"
             onClick={() => {
-              if (authState.username === postObject.username) {
+              if (authState.correo === postObject.correo) {
                 editPost("body");
               }
             }}
@@ -146,7 +146,7 @@ function Post() {
           </div>
           <div className="footer">
             {postObject.username}
-            {authState.username === postObject.username && (
+            {authState.correo === postObject.correo && (
               <button
                 onClick={() => {
                   deletePost(postObject.id);
@@ -177,7 +177,7 @@ function Post() {
                   <div key={key} className="comment">
                     {comment.commentbody}
                     <label> Username: {comment.username}</label>
-                    {authState.username === comment.username && (
+                    {authState.correo === comment.correo && (
                       <button
                         onClick={() => {
                           deleteComment(comment.id);

@@ -17,8 +17,8 @@ function Registration() {
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
     correo: Yup.string().min(3).max(25).required(),
-    peso: Yup.string().min(3).max(25).required(),
-    estatura: Yup.string().min(3).max(25).required(),
+    peso: Yup.string().min(1).max(25).required(),
+    estatura: Yup.string().min(1).max(25).required(),
     password: Yup.string().min(4).max(20).required(),
   });
   const onSubmit = (data) =>{

@@ -82,8 +82,8 @@ function App() {
               )}
             </div>
             <div className="loggedInContainer">
-              <Link to="/formulario"> Formulario </Link>
-              <Link to={`profile/${authState.id}`} >{authState.username}</Link>
+              
+              <Link to={`profile/${authState.id}`} >Perfil</Link>
               {authState.status && <button  onClick={logout} to ="/" >SALIR</button>}
             </div>
           </div>
