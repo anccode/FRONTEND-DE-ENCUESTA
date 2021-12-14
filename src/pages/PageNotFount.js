@@ -1,17 +1,18 @@
 import React from 'react'
+import "../estilos/styles.css";
 
-import  NE from "../assets/NE.jpg";
+import  pig from "../assets/pig.jpg";
 
 function PageNotFount() {
     return (
-        <div>
-            <h1>NO SIRBE ESTA WADAD RCTM </h1>
-       
-         
-            
         
-         <div class="image">
-         <img src={NE} />
+             <div class="aea">
+            <link href = "https: //fonts.googleapis.com/css2? family = Rubik: wght @ 500 & display = swap "rel =" stylesheet "></link>
+        <center><h1 class="titulo-PX"> PAGE NO FOUNT</h1></center>
+        <link href = "https: //fonts.googleapis.com/css2? familia = Raleway: wght @ 100 &family = Rubik: wght @ 500 & display = swap "rel =" stylesheet "></link>
+        
+         <div class="pepa">
+         <img src={pig} />
        </div>
        </div>
     )
