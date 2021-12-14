@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUp";
 import { AuthContext } from "../helpers/AuthContext";
+import "../estilos/profile.css"; 
 
 function Profile() {
   let { id } = useParams();
@@ -55,15 +56,39 @@ function Profile() {
   };
 
   return (
+
     <div className="profilePageContainer">
     <div className="basicInfo">
       {" "}
-      <h1> Username: {username} </h1>
+      <div class ="titulos">
+        <h1>INFORMACION DEL USUARIO</h1>
+      <h1> Nombre: {username} </h1>
       <h1> Correo: {correo} </h1>
       <h1> Peso: {peso} </h1>
       <h1> Talla: {estatura} </h1>
+      </div>
+      <div>
+        <h1>ENTRENAMIENTO</h1>
+        <p>🚫    Eliminar los Anuncios<br />
+           ⏰    Recordatorio  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwdwadawd<br />
+           ⌚    Tiempo de Preparacion<br />
+           🛏️    Reposo de entrenamiento<br />
+           🔇    Opciones de Sonido<br />
+
+
+
+
+
+
+        </p>
+
+       
+      
+          
+        
+      </div>
       {authState.correo === correo && (
-        <button
+        <button 
           onClick={() => {
             navigate("/changepassword");
           }}

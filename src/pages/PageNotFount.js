@@ -1,5 +1,6 @@
 import React from 'react'
 import "../estilos/styles.css";
+import Typography from '@mui/material/Typography';
 
 import  pig from "../assets/pig.jpg";
 
