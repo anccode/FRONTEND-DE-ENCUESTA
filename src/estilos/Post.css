@@ -38,12 +38,12 @@
   }
   
   .addCommentContainer button {
-    background-color: dodgerblue;
+    background-color: #FC6887;
     color: white;
   }
   
   .addCommentContainer input {
-    border: 2px solid dodgerblue;
+    border: 2px solid #FC6887;
   }
   
   .rightSide .listOfComments {
