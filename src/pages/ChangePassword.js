@@ -3,8 +3,9 @@ import axios from "axios";
 function ChangePassword() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
-
+  //estafuncion comparara la contraseña 
   const changePassword = () => {
+
     axios.put(
       "http://localhost:3001/auth/changepassword",
       {
