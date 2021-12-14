@@ -1,13 +1,33 @@
 
-.home {
-    
-        font: size 30px;
-        display: flex;
-       
-}
-.image {
+.contenedordos {
         
-        height: 500px;
-        width: 700px;
-      
+        display: flex;
+        padding-bottom:50px;
+
 }
+.home{
+        display: flex;
+
+}
+.contenedor{
+        
+    padding-right:30px;
+    padding-top:25px;
+}
+.texto{
+        font-size: 40px;
+    color: #FC6887;
+}
+.parrafo{
+        font-size: 20
+        px;
+}
+
+
+
+.image {
+padding-left:60px;
+ padding-top:50px;
+ width: 50%;
+}
+
