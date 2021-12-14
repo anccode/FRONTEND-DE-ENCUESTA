@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom'
+import TextField from '@mui/material/TextField';
+import '../estilos/Registration.css'
 
 function Registration() {
   const navigate = useNavigate()
@@ -55,6 +57,7 @@ function Registration() {
           />
           <label>Peso:</label>
           <ErrorMessage name="peso" component="span" />
+          <div class="medidas">
           <Field
             autoComplete="off"
             id="inputCreatePost"
@@ -62,15 +65,24 @@ function Registration() {
             type="number"
             placeholder="(50.5)"
           />
+          <div class="text">
+          <p>Kilos</p>
+          </div>
+          </div>
           <label>Estatura:</label>
           <ErrorMessage name="estatura" component="span" />
-          <Field
+          <div class="medidas">
+          <div><Field
             autoComplete="off"
             id="inputCreatePost"
             name="estatura"
             type="number"
             placeholder="(1.60)"
-          />
+          /></div>
+          <div class="text">
+          <p>Metros</p>
+          </div>
+          </div>
           <label>Password:</label>
           <ErrorMessage name="password" component="span" />
           <Field

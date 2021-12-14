@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 import "../estilos/Login.css";
+import toast, { Toaster } from 'react-hot-toast';
+
 function Login() {
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,7 @@ function Login() {
       if (response.data.error) {
         alert(response.data.error);
       } else {
+        
         localStorage.setItem("accessToken", response.data.token);
         setAuthState({
           correo: response.data.correo,
@@ -28,7 +31,7 @@ function Login() {
   };
   return (
     <div class="loginContainer">
-      <div class="login" >
+      <div class="login">
         <label> USUARIO </label>
         <input
           type="Text"
@@ -37,17 +40,17 @@ function Login() {
           }}
         />
       </div>
-      <div class="login" >
-      <label> CONTRASEÑA </label>
-      <input
-        type="password"
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
+      <div class="login">
+        <label> CONTRASEÑA </label>
+        <input
+          type="password"
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
       </div>
       <button onClick={login}>INICIAR SESION</button>
-    </div>
+     </div>
   );
 }
 
