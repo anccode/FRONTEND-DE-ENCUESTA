@@ -16,6 +16,7 @@
     cursor: pointer;
   }
   .post .title {
+    padding :20px;
     flex: 20%;
     border-bottom: 1px solid lightgray;
     background-color: #FC6887;
