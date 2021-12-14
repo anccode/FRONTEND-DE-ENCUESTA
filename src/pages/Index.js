@@ -14,7 +14,7 @@ function Index() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div class="main" >
       <div class="container">
         <div class="section">
           <h1>
