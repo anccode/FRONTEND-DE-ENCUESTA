@@ -1,17 +1,47 @@
-.titulo-PX {
+.contenedordos {
+        
+    padding-bottom:50px;
+}
+.home{
+    display: flex;
 
-    color: white ;
-    font-size: 5em;
-    line-height: 1.9 ;
-    font-stretch: narrower;
-    font-variant: small-caps;
-    background-color: pink;
-    border-radius: 1%;
-    align-items: center;
     
     
+
+}
+.contenedor{
+    
+padding-right:30px;
+padding-top:25px;
+}
+.texto{
+    font-size: 40px;
+color: #FC6887;
+padding-left:70px;
 }
 .parrafo{
-    font-size: 50px;
+    font-size: 20px;
+    padding-left:30px;
+    padding-bottom:10px;
+    
+
+}
+.image {
+padding-left:20px;
+padding-top:100px;
+width: 50%;
+
+
+}
+
+.airepuro{
+    font-size: 40px;
+    color: #FC6887;
+    padding-left:70px;
+}
+.parrafoaire{
+    font-size: 20px;
+    padding-left:30px;
+    padding-bottom:10px;
 
 }
