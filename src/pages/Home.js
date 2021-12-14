@@ -1,19 +1,20 @@
 import React from "react";
+import "../estilos/Home.css";
 
 function Home() {
   return (
-    <div>
-      <h1>
-        PONGA EN PRACTICA ESTOS <br />
-        CONSEJOS EN SU VIDA Y EVITE LA
-        <br />
-        MAYORIA DE ENFERMEDADES
-      </h1>
-
+    <div class="home">
+      <h1 class="texto">8 REMEDIOS NATURALES</h1>
       <p>
-        Tiene en sus manos los 8 remedios naturales que Dios nos dejo para poder
-        mantenernos con buena salud o para restablecer la salud
-      </p>
+      Son aquellas técnicas utilizadas desde el hogar a partir de las plantas<br />
+        naturales que nos brinda el medio ambiente y que cuentan con <br />
+       propiedades muy efectivas para hacer frente a problemas de salud <br />
+       en el cuerpo humano.<br />
+        
+        
+      
+         
+          </p>
     </div>
   );
 }
