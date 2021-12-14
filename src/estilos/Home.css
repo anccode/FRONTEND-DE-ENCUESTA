@@ -1,5 +1,13 @@
+
 .home {
     
         font: size 30px;
-
+        display: flex;
+       
+}
+.image {
+        
+        height: 500px;
+        width: 700px;
+      
 }
