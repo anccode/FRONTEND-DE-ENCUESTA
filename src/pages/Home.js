@@ -4,10 +4,10 @@ import RO from "../assets/RO.jpg";
 
 function Home() {
   return (
-    <div>
+    
     <div class="home">
       <div class="contenedor">
-      <h1 class="texto">8 REMEDIOS NATURALES</h1>
+     <center><h1 class="texto">8 REMEDIOS NATURALES</h1></center>
       
       <div class="contenedordos">
       <div class="parrafo">
@@ -34,27 +34,30 @@ function Home() {
        <div class = "aire">
        <div class =" contenedortres">
 
-         <h1>Aire Puro </h1>
+         <center><h1 class= "airepuro">AIRE PURO </h1></center>
         
-        <p>Al respirar aire puro el cuerpo absorbe oxígeno y favorece la oxigenación<br />
+        <b><p class= "parrafoaire">Al respirar aire puro el cuerpo absorbe oxígeno y favorece la oxigenación<br />
            celular eliminando las toxinas del organismo. Adiós estrés. Respirar<br /> 
            profundamente aire puro calma y relaja el sistema nervioso contribuyendo a <br />
            un estado de bienestar general. ¡Más vitalidad!<br />
+           <br></br>
            La respiración de aire puro ayuda a estimular nuestro sistema inmunológico,<br />
             reduciendo la posibilidad de padecer trastornos alérgicos, afecciones respiratorias <br />
             y asma. Al respirar aire limpio se consigue eliminar un gran número de toxinas acumuladas,<br />
              y células muertas, diariamente en nuestro organismo<br />
-           </p>
+           </p></b>
 
        </div>
        
     
        </div>
        </div>
+       
        <div class="image">
             <img src={RO} />
           </div>
-       
+          
+          
        
       
        
@@ -62,7 +65,7 @@ function Home() {
         
     </div>
    
-    </div>
+    
   );
 }
 
