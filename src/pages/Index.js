@@ -37,6 +37,12 @@ function Index() {
             <Button variant="outlined" >Comenzar ahora</Button>
           </div>
           <div class="image">
+            <div>
+              wdwad
+              dwdw
+
+              dw
+            </div>
             <img src={rn} />
           </div>
         </div>
