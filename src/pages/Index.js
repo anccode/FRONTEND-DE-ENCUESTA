@@ -34,7 +34,7 @@ function Index() {
               </div>
               
             </div>
-            <Button variant="outlined">Comenzar ahora</Button>
+            <Button variant="outlined" >Comenzar ahora</Button>
           </div>
           <div class="image">
             <img src={rn} />
