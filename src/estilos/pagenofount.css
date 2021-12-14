@@ -1,0 +1,17 @@
+.titulo-PX {
+
+    color: white ;
+    font-size: 5em;
+    line-height: 1.9 ;
+    font-stretch: narrower;
+    font-variant: small-caps;
+    background-color: pink;
+    border-radius: 1%;
+    align-items: center;
+    
+    
+}
+.parrafo{
+    font-size: 50px;
+
+}
