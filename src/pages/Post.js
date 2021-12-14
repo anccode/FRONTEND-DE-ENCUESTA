@@ -6,9 +6,7 @@ import { AuthContext } from "../helpers/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "../estilos/Post.css";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUp";
-
-
-
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function Post() {
   let { id } = useParams();
@@ -117,9 +115,6 @@ function Post() {
     }
   };
 
-
-  
-
   return (
     <div className="postPage">
       <div className="leftSide">
@@ -146,7 +141,7 @@ function Post() {
           </div>
           <div className="footer">
             {postObject.username}
-            {authState.correo === postObject.correo && (
+            {authState.correo == postObject.correo && (
               <button
                 onClick={() => {
                   deletePost(postObject.id);
@@ -175,16 +170,16 @@ function Post() {
               {comments.map((comment, key) => {
                 return (
                   <div key={key} className="comment">
+                    <label>{comment.username} :</label>
                     {comment.commentbody}
-                    <label> Username: {comment.username}</label>
-                    {authState.correo === comment.correo && (
-                      <button
+                    {authState.correo == comment.correo && (
+                      <DeleteIcon
                         onClick={() => {
                           deleteComment(comment.id);
                         }}
-                      >
-                        DELETE
-                      </button>
+                        
+                      />
+                    
                     )}
                   </div>
                 );

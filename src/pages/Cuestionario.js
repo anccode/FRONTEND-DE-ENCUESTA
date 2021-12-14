@@ -6,10 +6,15 @@ import API from "../Api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 import "../estilos/CreatePost.css";
-
+import Switch from "@mui/material/Switch";
 
 function Cuestionario() {
- 
+  const [checked, setChecked] = React.useState(true);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
   let navigate = useNavigate();
   const initialValues = {
     p1: "",
@@ -62,11 +67,17 @@ function Cuestionario() {
         validationSchema={validationSchema}
       >
         <Form className="formContainer">
-        <Field
+          <Switch
+            checked={checked}
+            onChange={handleChange}
+            inputProps={{ "aria-label": "controlled" }}
+          />
+          <Field
             autoComplete="off"
             id="inputCreatePost"
             name="p1"
             placeholder="(Ex. Post...)"
+            type="checkout"
           />
 
           <Field

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import rn from "../assets/rn.jpg";
 import frame1 from "../assets/frame1.png";
 import frameLogin from "../assets/frameLogin.png";
@@ -8,8 +8,11 @@ import frameActividades from "../assets/frameActividades.png";
 import Correr from "../assets/Correr.png";
 import "../estilos/index.css";
 import Button from "@mui/material/Button";
-
+import axios from 'axios'
+import API from '../Api'
 function Index() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div class="container">
@@ -34,7 +37,7 @@ function Index() {
               </p>
             </div>
           </div>
-          <Button variant="outlined">Comenzar ahora</Button>
+          <Button variant="outlined" href="/registration">Comenzar ahora</Button>
         </div>
         <div class="image">
           <img src={rn} />
@@ -48,6 +51,7 @@ function Index() {
             Incluye en tu vida los 8 <br />
             remedios naturales
           </h3>
+
           <p>
             Aqui encontraras los remedios que <br />
             necesites para cambiar tu vida.
@@ -107,29 +111,36 @@ function Index() {
           <img src={cuestionario} />
         </div>
       </div>
-      <hr />
+
       <div class="frame2">
         <div class="text">
           <img />
           <h3>
-          Te ayudaremos a crear una rutina <br/>
-de ejercicios.          </h3>
+            Te ayudaremos a crear una rutina <br />
+            de ejercicios.{" "}
+          </h3>
           <p>
-          podras marcar tu ruta y la distancia<br/>
-recorrida, junto con un temporizador<br/>
-para mantener los tiempos de ejercicio          </p>
+            podras marcar tu ruta y la distancia
+            <br />
+            recorrida, junto con un temporizador
+            <br />
+            para mantener los tiempos de ejercicio{" "}
+          </p>
         </div>
         <div class="img">
           <img src={Correr} />
         </div>
       </div>
       <div class="footer">
+        <hr />
         <h1>
           Pruebelo Hoy Mismo <br />
           Comienze de forma gratuita. <br />
           Utilize los 8 remedios para mejorar su calidad de vida
         </h1>
-        <Button variant="outlined">Comenzar ahora</Button>
+        <Button href="/registration" variant="outlined"  >
+          Comenzar ahora
+        </Button>
       </div>
     </div>
   );

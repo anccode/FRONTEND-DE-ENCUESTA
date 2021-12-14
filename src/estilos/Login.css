@@ -8,7 +8,7 @@
   }
   
   .loginContainer input,
-  button {
+  Button {
     width: 200px;
     height: 50px;
     border-radius: 8px;
@@ -17,10 +17,10 @@
   }
   
   .loginContainer button {
-    background-color: dodgerblue;
+    background-color: #FC6887;
     color: white;
   }
   
   .loginContainer input {
-    border: 2px solid dodgerblue;
+    border: 2px solid #FC6887;
   }

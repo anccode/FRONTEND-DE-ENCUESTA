@@ -34,7 +34,7 @@ function Login() {
       <div class="login">
         <label> USUARIO </label>
         <input
-          type="Text"
+          type="email"
           onChange={(event) => {
             setCorreo(event.target.value);
           }}

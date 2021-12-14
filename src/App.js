@@ -68,8 +68,7 @@ function App() {
               {!authState.status ? (
                 <>
                   <Link to="/"> LOGO </Link>
-                  <Link to="/login">INICIAR SESSION</Link>
-                  <Link to="/registration">Crear Cuenta</Link>
+                  
                 </>
               ) : (
                 <>
@@ -83,7 +82,10 @@ function App() {
               {authState.status && (
                 <Link to={`profile/${authState.id}`}>Perfil</Link>
               )}
+              {!authState.status && <Link to="/login">INICIAR SESSION</Link>}
+              {!authState.status && <Link to="/registration">Crear Cuenta</Link>}
               {authState.status && <Link to="/cuestionario">{date}</Link>}
+              
               {authState.status && (
                 <button onClick={logout} to="/">
                   SALIR

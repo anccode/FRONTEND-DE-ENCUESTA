@@ -36,6 +36,7 @@ Button {
 
 .text{
     padding-right: 20% ;
+    display: block;
 }
 
 .img  {
