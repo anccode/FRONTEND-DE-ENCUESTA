@@ -23,6 +23,7 @@
 .image {
   padding-left: 20px;
   padding-top: 20px;
+  
 }
 Button {
   color: black !important ;
@@ -43,8 +44,19 @@ Button {
 .img  {
   padding: 10px;
 align-self: end;
+
 }
 .footer {
   text-align: center;
 
+}
+.cel img {
+  border-radius: 12.5%;
+  margin-top: 10%;
+  
+}
+.libros img {
+  width: 800px;
+  border-radius: 20%;
+  margin-top: 20px;
 }

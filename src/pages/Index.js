@@ -37,9 +37,9 @@ function Index() {
               </p>
             </div>
           </div>
-          <Button variant="outlined" href="/registration">Comenzar ahora</Button>
+          <center><Button variant="outlined" href="/registration">Comenzar ahora</Button></center>
         </div>
-        <div class="image">
+        <div class="libros">
           <img src={rn} />
         </div>
       </div>
@@ -57,7 +57,7 @@ function Index() {
             necesites para cambiar tu vida.
           </p>
         </div>
-        <div class="img">
+        <div class="cel">
           <img src={frame1} />
         </div>
       </div>
@@ -74,7 +74,7 @@ function Index() {
             redes sociales.{" "}
           </p>
         </div>
-        <div class="img">
+        <div class="cel">
           <img src={frameLogin} />
         </div>
       </div>
@@ -89,7 +89,7 @@ function Index() {
             podrás reforzar los aspectos <br /> que necesites.{" "}
           </p>
         </div>
-        <div class="img">
+        <div class="cel">
           <img src={frameActividades} />
         </div>
       </div>
@@ -107,7 +107,7 @@ function Index() {
             por donde iniciar. <br />{" "}
           </p>
         </div>
-        <div class="img">
+        <div class="cel">
           <img src={cuestionario} />
         </div>
       </div>
@@ -127,7 +127,7 @@ function Index() {
             para mantener los tiempos de ejercicio{" "}
           </p>
         </div>
-        <div class="img">
+        <div class="cel">
           <img src={Correr} />
         </div>
       </div>
