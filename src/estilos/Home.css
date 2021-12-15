@@ -25,9 +25,16 @@ padding-left:70px;
 }
 .image {
 padding-left:20px;
-padding-top:100px;
+padding-top: 10x;
 width: 50%;
 justify-content: flex-end;
+border-radius: 50;
+
+
+
+}
+.image img {
+border-radius: 15%;
 }
 
 .airepuro{
@@ -40,4 +47,10 @@ justify-content: flex-end;
     padding-left:30px;
     padding-bottom:10px;
 
+}
+
+.parrafo{
+       
+        margin-top: 45px;
+      
 }
