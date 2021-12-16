@@ -12,6 +12,8 @@ import ChangePassword from "./pages/ChangePassword";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Cuestionario from "./pages/Cuestionario";
+import PostGeneral from "./pages/PostGeneral";
+import Resultados from "./pages/Resultados";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./estilos/navar.css";
@@ -82,7 +84,7 @@ function App() {
               {authState.status && (
                 <Link to={`profile/${authState.id}`}>Perfil</Link>
               )}
-              {!authState.status && <Link to="/PostHome">BLOG</Link>}
+              {!authState.status && <Link to="/PostGeneral">BLOG</Link>}
               {!authState.status && <Link to="/login">INICIAR SESSION</Link>}
               {!authState.status && <Link to="/registration">Crear Cuenta</Link>}
               {authState.status && <Link to="/cuestionario">{date}</Link>}
@@ -105,6 +107,8 @@ function App() {
             <Route path="/profile/:id" exact element={<Profile />} />
             <Route path="/cuestionario" exact element={<Cuestionario />} />
             <Route path="/ChangePassword" exact element={<ChangePassword />} />
+            <Route path="/PostGeneral" exact element={<PostGeneral />} />
+            <Route path="/Resultados" exact element={<Resultados />} />
             <Route path="*" exact element={<PageNotFount />} />
           </Routes>
         </Router>

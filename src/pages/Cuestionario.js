@@ -65,7 +65,6 @@ function Cuestionario() {
         validationSchema={validationSchema}
       >
         <Form className="formContainer">
-          <h1> Cuestionario </h1>
           <div class="container">
             <label>sueles dejar que entre aire donde estas</label>
             <Field
@@ -142,7 +141,9 @@ function Cuestionario() {
               type="checkbox"
             />
           </div>
-          <button type="onSubmit"> Generar Respuestas </button>
+          <div class="boton">
+          <button type="onSubmit" id="boton"> GUARDAR </button>
+          </div>
         </Form>
       </Formik>
     </div>
