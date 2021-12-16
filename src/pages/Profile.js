@@ -58,7 +58,7 @@ function Profile() {
     <div className="profilePageContainer">
     <div className="basicInfo">
       {" "}
-      <h1> Username: {username} </h1>
+      <h1> Usuario: {username} </h1>
       <h1> Correo: {correo} </h1>
       <h1> Peso: {peso} </h1>
       <h1> Talla: {estatura} </h1>

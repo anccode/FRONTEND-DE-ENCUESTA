@@ -108,7 +108,7 @@ function App() {
             <Route path="/cuestionario" exact element={<Cuestionario />} />
             <Route path="/ChangePassword" exact element={<ChangePassword />} />
             <Route path="/PostGeneral" exact element={<PostGeneral />} />
-            <Route path="/Resultados" exact element={<Resultados />} />
+            <Route path="/resultados" exact element={<Resultados />} />
             <Route path="*" exact element={<PageNotFount />} />
           </Routes>
         </Router>
