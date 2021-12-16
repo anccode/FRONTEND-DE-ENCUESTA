@@ -12,6 +12,7 @@ body {
   padding: 0;
   background:white;
   opacity: 100%;
+  font-size: inherit !important;
 }
 
 

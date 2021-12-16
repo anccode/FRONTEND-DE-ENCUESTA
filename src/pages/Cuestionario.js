@@ -44,8 +44,6 @@ function Cuestionario() {
     p6: Yup.string().required("Este campo es requerido"),
     p7: Yup.string().required("Este campo es requerido"),
     p8: Yup.string().required("Este campo es requerido"),
-    p9: Yup.string().required("Este campo es requerido"),
-    p10: Yup.string().required("Este campo es requerido"),
   });
 
   const onSubmit = (data) => {
@@ -67,75 +65,84 @@ function Cuestionario() {
         validationSchema={validationSchema}
       >
         <Form className="formContainer">
-          <Switch
-            checked={checked}
-            onChange={handleChange}
-            inputProps={{ "aria-label": "controlled" }}
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p1"
-            placeholder="(Ex. Post...)"
-            type="checkout"
-          />
+          <h1> Cuestionario </h1>
+          <div class="container">
+            <label>sueles dejar que entre aire donde estas</label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p1"
+              type="checkbox"
+            />
+          </div>
+        
+          <div class="container">
+            <label>sueles dormir entre 7 y 8 horas</label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p2"
+              type="checkbox"
+            />
+          </div>
 
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p2"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p3"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p4"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p5"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p6"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p7"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p8"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p9"
-            placeholder="(Ex. Post...)"
-          />
-          <Field
-            autoComplete="off"
-            id="inputCreatePost"
-            name="p10"
-            placeholder="(Ex. Post...)"
-          />
-
-          <button type="onSubmit"> Create Post </button>
+          <div class="container">
+            <label>sueles comer a la hora correcta</label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p3"
+              type="checkbox"
+            />
+          </div>
+          <div class="container">
+            <label>sueles tomar 2 o mas litros de agua</label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p4"
+              type="checkbox"
+            />
+          </div>
+          <div class="container">
+            <label>sueles hacer ejercicio</label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p5"
+              type="checkbox"
+            />
+          </div>
+          <div class="container">
+            <label>trabajas seguido o te tomas descansos</label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p6"
+              type="checkbox"
+            />
+          </div>
+          <div class="container">
+            <label>tienes confianza en ti mismo</label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p7"
+              type="checkbox"
+            />
+          </div>
+          <div class="container">
+            <label>
+              te expones al sol antes de las 10am o despues de las 3 pm
+            </label>
+            <Field
+              autoComplete="off"
+              id="inputCreatePost"
+              name="p8"
+              type="checkbox"
+            />
+          </div>
+          <button type="onSubmit"> Generar Respuestas </button>
         </Form>
       </Formik>
     </div>

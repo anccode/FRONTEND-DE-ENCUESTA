@@ -1,4 +1,3 @@
-
 .container {
   display: flex;
   align-items: center;
@@ -23,7 +22,6 @@
 .image {
   padding-left: 20px;
   padding-top: 20px;
-  
 }
 Button {
   color: black !important ;
@@ -36,27 +34,28 @@ Button {
   justify-content: center;
 }
 
-.text{
-    padding-right: 20% ;
-    display: block;
+.text {
+  padding-right: 20%;
+  display: block;
+  align-items: center;
 }
-
-.img  {
+.text2{
+  padding-right: 300px;
+}
+.img {
   padding: 10px;
-align-self: end;
-
+  align-self: end;
 }
 .footer {
   text-align: center;
-
 }
 .cel img {
   border-radius: 12.5%;
   margin-top: 10%;
-  
 }
 .libros img {
   width: 800px;
   border-radius: 20%;
   margin-top: 20px;
 }
+

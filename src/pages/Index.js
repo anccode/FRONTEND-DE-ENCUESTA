@@ -8,13 +8,19 @@ import frameActividades from "../assets/frameActividades.png";
 import Correr from "../assets/Correr.png";
 import "../estilos/index.css";
 import Button from "@mui/material/Button";
-import axios from 'axios'
-import API from '../Api'
+import axios from "axios";
+import API from "../Api";
+import todo from "../assets/todo.png";
+import login from "../assets/login.jpg";
+import notas from "../assets/notas.png";
+import rutas from "../assets/rutas.jpg";
+import correr from "../assets/correr.png";
+
 function Index() {
   const navigate = useNavigate();
 
   return (
-    <div class="main" >
+    <div class="main">
       <div class="container">
         <div class="section">
           <h1>
@@ -37,7 +43,11 @@ function Index() {
               </p>
             </div>
           </div>
-          <center><Button variant="outlined" href="/registration">Comenzar ahora</Button></center>
+          <center>
+            <Button variant="outlined" href="/registration">
+              Comenzar ahora
+            </Button>
+          </center>
         </div>
         <div class="libros">
           <img src={rn} />
@@ -46,16 +56,20 @@ function Index() {
       <hr />
       <div class="frame2">
         <div class="text">
-          <img />
-          <h3>
-            Incluye en tu vida los 8 <br />
-            remedios naturales
-          </h3>
+          <div class="text2">
+            <img src={todo} width="20%" />
+          
+          
+            <h3>
+              Incluye en tu vida los 8 <br />
+              remedios naturales
+            </h3>
 
-          <p>
-            Aqui encontraras los remedios que <br />
-            necesites para cambiar tu vida.
-          </p>
+            <p>
+              Aqui encontraras los remedios que <br />
+              necesites para cambiar tu vida.
+            </p>
+          </div>
         </div>
         <div class="cel">
           <img src={frame1} />
@@ -64,15 +78,19 @@ function Index() {
       <hr />
       <div class="frame2">
         <div class="text">
-          <img />
-          <h3>Unete con tus redes sociales </h3>
-          <p>
-            para facilitar tu registro y unirte
-            <br />
-            podras hacerlo con tus
-            <br />
-            redes sociales.{" "}
-          </p>
+          <div class="image2">
+            <img src={login} width="20%" />
+          </div>
+          <div class="text">
+            <h3>Unete con tus redes sociales </h3>
+            <p>
+              para facilitar tu registro y unirte
+              <br />
+              podras hacerlo con tus
+              <br />
+              redes sociales.{" "}
+            </p>
+          </div>
         </div>
         <div class="cel">
           <img src={frameLogin} />
@@ -81,7 +99,7 @@ function Index() {
       <hr />
       <div class="frame2">
         <div class="text">
-          <img />
+          <img src={rutas} width="20%" />
           <h3>Elige por donde empezar </h3>
           <p>
             Con las actividades disponibles
@@ -97,7 +115,7 @@ function Index() {
 
       <div class="frame2">
         <div class="text">
-          <img />
+          <img src={notas} width="20%" />
           <h3>No sabes por donde empezar </h3>
           <p>
             Con este pequeño cuestionario
@@ -114,7 +132,7 @@ function Index() {
 
       <div class="frame2">
         <div class="text">
-          <img />
+          <img src={correr} width="20%" />
           <h3>
             Te ayudaremos a crear una rutina <br />
             de ejercicios.{" "}
@@ -138,7 +156,7 @@ function Index() {
           Comienze de forma gratuita. <br />
           Utilize los 8 remedios para mejorar su calidad de vida
         </h1>
-        <Button href="/registration" variant="outlined"  >
+        <Button href="/registration" variant="outlined">
           Comenzar ahora
         </Button>
       </div>

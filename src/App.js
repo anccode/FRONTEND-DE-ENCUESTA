@@ -76,12 +76,13 @@ function App() {
                   <Link to="/PostHome">BLOG</Link>
                   <Link to="/createpost">CREAR BLOG</Link>
                 </>
-              )}
+                 )}
             </div>
             <div className="loggedInContainer">
               {authState.status && (
                 <Link to={`profile/${authState.id}`}>Perfil</Link>
               )}
+              {!authState.status && <Link to="/PostHome">BLOG</Link>}
               {!authState.status && <Link to="/login">INICIAR SESSION</Link>}
               {!authState.status && <Link to="/registration">Crear Cuenta</Link>}
               {authState.status && <Link to="/cuestionario">{date}</Link>}

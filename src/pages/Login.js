@@ -3,8 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 import "../estilos/Login.css";
-import toast, { Toaster } from 'react-hot-toast';
-
+import toast, { Toaster } from "react-hot-toast";
+import loginNiño from "../assets/loginNiño.png";
 function Login() {
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +18,6 @@ function Login() {
       if (response.data.error) {
         alert(response.data.error);
       } else {
-        
         localStorage.setItem("accessToken", response.data.token);
         setAuthState({
           correo: response.data.correo,
@@ -31,16 +30,18 @@ function Login() {
   };
   return (
     <div class="loginContainer">
+      <div class="img">
+        <img src={loginNiño}  />
+      </div>
       <div class="login">
-        <label> USUARIO </label>
+        <label> CORREO </label>
         <input
           type="email"
           onChange={(event) => {
             setCorreo(event.target.value);
           }}
         />
-      </div>
-      <div class="login">
+
         <label> CONTRASEÑA </label>
         <input
           type="password"
@@ -48,9 +49,10 @@ function Login() {
             setPassword(event.target.value);
           }}
         />
+
+        <button onClick={login}>INICIAR SESION</button>
       </div>
-      <button onClick={login}>INICIAR SESION</button>
-     </div>
+    </div>
   );
 }
 
