@@ -9,7 +9,7 @@ function Resultados() {
   const [resultados, setResultados] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/cuestionarios/resultados")
+      .get(`http://localhost:3001/cuestionarios/resultados/${id}`)
       .then((response) => {
         setResultados(response.data);
       });

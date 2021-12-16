@@ -4,27 +4,24 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUp";
 import { AuthContext } from "../helpers/AuthContext";
-import "../estilos/PostHome.css"
+import "../estilos/PostHome.css";
 function PostHome() {
-  
   let navigate = useNavigate();
 
   const [listOfPosts, setListOfPosts] = useState([]);
-  const {authState} = useContext(AuthContext);
+  const { authState } = useContext(AuthContext);
 
   useEffect(() => {
-
-    if(!localStorage.getItem("accessToken")){
-      navigate("/login")
-    }else{
-    
-    axios
-      .get("http://localhost:3001/posts", {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
-      .then((response) => {
-        setListOfPosts(response.data.listOfPosts);
-      });
+    if (!localStorage.getItem("accessToken")) {
+      navigate("/login");
+    } else {
+      axios
+        .get("http://localhost:3001/posts", {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        })
+        .then((response) => {
+          setListOfPosts(response.data.listOfPosts);
+        });
     }
   }, []);
   const likePost = (postId) => {
@@ -69,13 +66,13 @@ function PostHome() {
             </div>
             <div className="footer">
               <div className="username">
-                <Link to={`/profile/${value.UserId}`} >{value.username}</Link>
-                </div>
+                <Link to={`/profile/${value.UserId}`}>{value.username}</Link>
+              </div>
               <div className="buttons">
                 <ThumbUpAltIcon
                   onClick={() => {
                     likePost(value.id);
-                  }}                  
+                  }}
                 />
                 <label>{value.Likes.length}</label>
               </div>

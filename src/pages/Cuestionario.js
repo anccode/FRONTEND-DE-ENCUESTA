@@ -25,8 +25,6 @@ function Cuestionario() {
     p6: "",
     p7: "",
     p8: "",
-    p9: "",
-    p10: "",
   };
 
   useEffect(() => {
@@ -53,11 +51,11 @@ function Cuestionario() {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
-        navigate("/posthome");
+        
       });
   };
-
   return (
+
     <div className="createPostContainer">
       <Formik
         initialValues={initialValues}
@@ -142,7 +140,7 @@ function Cuestionario() {
             />
           </div>
           <div class="boton">
-          <button type="onSubmit" id="boton"> GUARDAR </button>
+          <button type="onSubmit" id="boton" > GUARDAR </button>
           </div>
         </Form>
       </Formik>
